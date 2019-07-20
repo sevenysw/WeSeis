@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<!-- 添加多功能选择列表，返回结果是文字的话就放在图片下面 -->
+<!-- 添加服务器功能，所有功能都是用自己的服务器实现 -->
+<view class="section">
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      选择功能：{{multiArray[0][multiIndex[0]]}}--{{multiArray[1][multiIndex[1]]}}
+    </view>
+  </picker>
+</view>
+
+<view class="btn-area">
+  
+  <view class="body-view">
+    <image
+      style="width: 100%; height: 300px; background-color: #eeeeee;"
+      mode="scaleToFill"
+      src="{{src}}"
+      bindtouchstart="onChange"
+      bindtouchend="onChange_inv"
+      bindtouchmove='onMove'
+    ></image>
+  </view>
+
+
+  <view class="body-view">
+    <button bindtap="onSelect" class="selectButton">选择数据</button>
+  </view>
+
+  <view class="body-view">
+    <button type="primary" bindtap="onRecognize_Seis">开始处理</button>
+  </view>
+
+    <view class="body-view">
+    <button  bindtap="onSave_Seis">保存结果</button>
+  </view>
+
+
+</view>
+
+<navigator url="/pages/info/info?info={{info}}" hover-class="navigator-hover" class="navi">查看说明</navigator>
+
+

@@ -1,0 +1,2 @@
+<!--pages/info.wxml-->
+<text>{{info}}</text>
